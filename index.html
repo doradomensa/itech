@@ -39,18 +39,18 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 48% 32%, rgba(255, 255, 255, 0.055), transparent 34%),
-        radial-gradient(circle at 75% 78%, rgba(255, 255, 255, 0.035), transparent 30%);
+        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.055), transparent 34%),
+        radial-gradient(circle at 76% 80%, rgba(255, 255, 255, 0.03), transparent 30%);
       pointer-events: none;
     }
 
     .page {
-      width: min(1100px, 92vw);
+      width: min(1200px, 94vw);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 20px;
+      padding: 42px 20px;
       position: relative;
       z-index: 1;
     }
@@ -58,15 +58,16 @@
     .card {
       text-align: center;
       animation: fadeUp 0.9s ease-out both;
+      transform: translateY(-2vh);
     }
 
     .logo {
-      width: min(720px, 82vw);
+      width: min(950px, 90vw);
       height: auto;
       display: block;
-      margin: 0 auto 42px;
-      opacity: 0.94;
-      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.08));
+      margin: 0 auto 26px;
+      opacity: 0.96;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.09));
       user-select: none;
       -webkit-user-drag: none;
       pointer-events: none;
@@ -76,23 +77,23 @@
       width: 120px;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--line), transparent);
-      margin: 0 auto 30px;
+      margin: 0 auto 26px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.4rem, 7vw, 6rem);
-      line-height: 1;
-      letter-spacing: 0.08em;
+      font-size: clamp(2rem, 4.8vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       font-weight: 800;
     }
 
     p {
       margin: 22px auto 0;
-      max-width: 620px;
+      max-width: 680px;
       color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.35rem);
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
       line-height: 1.55;
       letter-spacing: 0.02em;
     }
@@ -117,18 +118,58 @@
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-2vh);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .card {
+        transform: translateY(-1vh);
+      }
+
+      .logo {
+        width: min(760px, 92vw);
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 9vw, 3.6rem);
+        letter-spacing: 0.07em;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(-1vh);
+        }
       }
     }
 
     @media (max-width: 560px) {
+      .page {
+        padding: 34px 18px;
+      }
+
       .logo {
-        margin-bottom: 32px;
+        width: 94vw;
+        margin-bottom: 22px;
+      }
+
+      .divider {
+        margin-bottom: 22px;
       }
 
       .footer {
         bottom: 18px;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
       }
     }
   </style>
